@@ -8,12 +8,16 @@ export const links = () => [
 ]
 
 export async function loader(){
-    checkEnvVars(); // check env variables
 
-    const response = await fetch(`${process.env.STRAPI_URL_BASE}/api/blogs?populate=hero`, {
+    checkEnvVars();
+
+    const STRAPI_URL_BASE = process.env.STRAPI_URL_BASE;
+    const STRAPI_API_TOKEN = process.env.STRAPI_API_TOKEN;
+
+    const response = await fetch(`${STRAPI_URL_BASE}/api/blogs?populate=*`, {
         method: "GET",
         headers: {
-            "Authorization": `Bearer ${process.env.STRAPI_API_TOKEN}`,
+            "Authorization": `Bearer ${STRAPI_API_TOKEN}`,
             "Content-Type": "application/json"
         }
     }); // get the blogs
@@ -30,6 +34,7 @@ export async function loader(){
 
 export default function Index(){
     const blogs = useLoaderData();
+
     return (
         <Layout>
             {
