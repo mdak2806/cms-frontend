@@ -1,10 +1,17 @@
 /** @type {import('@remix-run/dev').AppConfig} */
 module.exports = {
+
+  
   ignoredRouteFiles: ["**/.*"],
+
+  // path: '/posts'
+  // path: '/posts/:postId',
+  // loaderData: require.resolve('../app/routes/posts/$postId'),
   // appDirectory: "app",
   // assetsBuildDirectory: "public/build",
   // serverBuildPath: "build/index.js",
   // publicPath: "/build/",
+
   serverModuleFormat: "cjs",
   future: {
     v2_dev: true,
@@ -15,3 +22,13 @@ module.exports = {
     v2_routeConvention: true,
   },
 };
+
+// export const showPost = (id: number) => {
+//   return {
+//     path: `/posts/${id}`,
+//     component: () => import('./app/routes/posts/$postsId'),
+//   };
+// };
+
+
+// remix server cant connect to the url

@@ -1,4 +1,8 @@
+import * as React from "react";
 import { cssBundleHref } from "@remix-run/css-bundle";
+// import {$postId} from '../app/routes/posts/$postsId';
+// import {Outlet} from "remix";
+// import {$postId} from "./app/routes/posts/$postId";
 
 import {
   Links,
@@ -23,7 +27,9 @@ export default function App() {
         <Links />
       </head>
       <body>
+        {/* <h2> Global Container </h2> */}
         <Outlet />
+       
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
