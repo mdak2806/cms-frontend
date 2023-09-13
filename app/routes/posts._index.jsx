@@ -1,6 +1,6 @@
 // this file is automatically read as /posts
 
-export default Bii = () => {
+export default Post = () => {
     return(
         <div> Hi Bisha</div>
     )
